@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MyBlog.Models.Post>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>
+
+	</title>
+</head>
+<body>
+	@if (Model != null)
+	{ 
+		
+
+			foreach (var post in Model)
+			{
+		<table>
+			<tr>
+				<td>@post.Id</td>
+				<td>@post.TitleOfPost</td>
+				<td>@post.DescriptionOfPost</td>
+			</tr>
+		</table>
+	}
+		
+	}
+</body>
+</html>
