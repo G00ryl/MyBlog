@@ -3,9 +3,20 @@
 <h1>Create</h1>
 
 <form  method="post">
+	<div>
+		<p>Title of post: </p>
+		<input asp-for="TitleOfPost" placeholder="Title"><br />
+		<span asp-validation-for="TitleOfPost"></span>
+	</div>
 
-<input asp-for="TitleOfPost"/><br/>
-<input asp-for="DescriptionOfPost"/><br/>
+	<div>
+		<p>Description of post: </p>
+		<input asp-for="DescriptionOfPost" placeholder="Description" /><br />
+		<span asp-validation-for="DescriptionOfPost"></span>
+	</div>
+
+
+		
 
 <input type="submit" name="save" value="Save"/>
 </form>

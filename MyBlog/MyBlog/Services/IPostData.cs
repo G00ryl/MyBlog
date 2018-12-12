@@ -10,6 +10,6 @@ namespace MyBlog.Services
 	{
 		IEnumerable<Post> GetAll();
 		Post Get(int id);
-
+		Post Add(Post post);
 	}
 }

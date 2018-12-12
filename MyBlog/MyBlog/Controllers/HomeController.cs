@@ -30,10 +30,29 @@ namespace MyBlog.Controllers
 			}
 			return View(model);
 		}
+		[HttpGet]
 		public IActionResult Create()
 		{
 			return View();
 		}
+		[HttpPost]
+		public IActionResult Create(PostEditModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				var newPost = new Post();
+				newPost.TitleOfPost = model.TitleOfPost;
+				newPost.DescriptionOfPost = model.DescriptionOfPost;
 
+
+				newPost = _postData.Add(newPost);
+
+				return RedirectToAction(nameof(Details), new { id = newPost.Id });
+			}
+			else
+			{
+				return View();
+			}
+		}
 	}
 }

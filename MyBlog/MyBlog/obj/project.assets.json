@@ -13648,11 +13648,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\banan\\source\\repos\\MyBlog\\MyBlog\\MyBlog.csproj",
+      "projectUniqueName": "C:\\Users\\banan\\Documents\\GitHub\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj",
       "projectName": "MyBlog",
-      "projectPath": "C:\\Users\\banan\\source\\repos\\MyBlog\\MyBlog\\MyBlog.csproj",
+      "projectPath": "C:\\Users\\banan\\Documents\\GitHub\\MyBlog\\MyBlog\\MyBlog\\MyBlog.csproj",
       "packagesPath": "C:\\Users\\banan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\banan\\source\\repos\\MyBlog\\MyBlog\\obj\\",
+      "outputPath": "C:\\Users\\banan\\Documents\\GitHub\\MyBlog\\MyBlog\\MyBlog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

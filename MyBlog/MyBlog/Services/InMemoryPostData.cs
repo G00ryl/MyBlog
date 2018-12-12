@@ -27,6 +27,13 @@ namespace MyBlog.Services
 			return _posts.FirstOrDefault(r => r.Id == id);
 		}
 
+		public Post Add(Post post)
+		{
+			post.Id = _posts.Max(r => r.Id) + 1;
+			_posts.Add(post);
+			return post;
+		}
+
 		List<Post> _posts;
 	}
 }
