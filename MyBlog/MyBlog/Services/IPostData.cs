@@ -9,5 +9,7 @@ namespace MyBlog.Services
 	public interface IPostData
 	{
 		IEnumerable<Post> GetAll();
+		Post Get(int id);
+
 	}
 }

@@ -1,25 +1,30 @@
-﻿@model IEnumerable<MyBlog.Models.Post>
+﻿@model MyBlog.ViewModels.HomeIndexViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>
-
+		My Blog
 	</title>
 </head>
 <body>
+	<header>
+		<h1>This is a blog about me!</h1>
+	</header>
+	<a asp-action="Create">New Post!</a>
 	@if (Model != null)
-	{ 
-		
-
-			foreach (var post in Model)
+	{
+		foreach (var post in Model.Posts)
 			{
 		<table>
 			<tr>
-				<td>@post.Id</td>
-				<td>@post.TitleOfPost</td>
-				<td>@post.DescriptionOfPost</td>
+				<td> @post.Id</td>
+				<td> @post.TitleOfPost</td>
+				<td> @post.DescriptionOfPost</td>
+				<td>
+					<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
+				</td>
 			</tr>
 		</table>
-	}
+		}
 		
 	}
 </body>

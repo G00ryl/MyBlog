@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyBlog.Models;
 using MyBlog.Services;
+using MyBlog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,23 @@ namespace MyBlog.Controllers
 		}
 		public IActionResult Index()
 		{
-			var model = _postData.GetAll();
+			var model = new HomeIndexViewModel();
+			model.Posts = _postData.GetAll();
 			return View(model);
 		}
+		public IActionResult Details(int id)
+		{
+			var model = _postData.Get(id);
+			if (model == null)
+			{
+				return RedirectToAction(nameof(Index));
+			}
+			return View(model);
+		}
+		public IActionResult Create()
+		{
+			return View();
+		}
+
 	}
 }

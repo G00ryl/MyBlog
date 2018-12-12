@@ -21,6 +21,12 @@ namespace MyBlog.Services
 		{
 			return _posts.OrderBy(p => p.Id);
 		}
+
+		public Post Get(int id)
+		{
+			return _posts.FirstOrDefault(r => r.Id == id);
+		}
+
 		List<Post> _posts;
 	}
 }
