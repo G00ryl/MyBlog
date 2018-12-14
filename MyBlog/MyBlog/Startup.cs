@@ -11,16 +11,26 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyBlog.Services;
 using MyBlog.Models;
+using Microsoft.EntityFrameworkCore;
+using MyBlog.Data;
 
 namespace MyBlog
 {
 	public class Startup
 	{
+		private IConfiguration _configuration;
+
+		public Startup(IConfiguration configuration)
+		{
+			_configuration = configuration;
+		}
+		
 		// This method gets called by the runtime. Use this method to add services to the container.
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddSingleton<IPostData, InMemoryPostData>();
+			services.AddDbContext<MyBlogDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MyBlog")));
+			services.AddScoped<IPostData, SqlPostData>();
 			services.AddMvc();
 		}
 
@@ -48,12 +58,6 @@ namespace MyBlog
 				await context.Response.WriteAsync($"Not found");
 			});
 		}
-		public Startup(IConfiguration configuration)
-		{
-			Configuration = configuration;
-		}
-
-		public IConfiguration Configuration { get; set; }
 
 		private void configureRoutes(IRouteBuilder routeBuilder)
 		{
