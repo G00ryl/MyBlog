@@ -18,6 +18,7 @@
 				<td> @post.DescriptionOfPost</td>
 				<td>
 					<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
+					<a asp-page="/Posts/Edit" asp-route-id="@post.Id">Edit</a>
 				</td>
 			</tr>
 		</table>

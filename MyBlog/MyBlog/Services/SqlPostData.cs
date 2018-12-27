@@ -31,5 +31,12 @@ namespace MyBlog.Services
 		{
 			return _context.Posts.OrderBy(r => r.Id);
 		}
+
+		public Post Update(Post post)
+		{
+			_context.Attach(post).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+			_context.SaveChanges();
+			return post;
+		}
 	}
 }
