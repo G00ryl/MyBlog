@@ -1,10 +1,7 @@
-﻿@model MyBlog.ViewModels.HomeIndexViewModel
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>
-		My Blog
-	</title>
-</head>
+﻿@model HomeIndexViewModel
+@{	
+	ViewBag.Title = "Home Page";
+}
 <body>
 	<header>
 		<h1>This is a blog about me!</h1>
@@ -25,7 +22,11 @@
 			</tr>
 		</table>
 		}
-		
+		@section footer{
+		<div>
+			<p>&copy; Website made by Dawid Gorla 2018."
+		</div>
+		 }
 	}
 </body>
 </html>

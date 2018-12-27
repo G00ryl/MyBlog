@@ -1,14 +1,18 @@
-﻿@model MyBlog.Models.Post
-
+﻿@model Post
+@{
+	ViewBag.Title = "Create Post";
+ }
 <h1>Create</h1>
 
-<form  method="post">
+<form method="post">
+
 	<div>
 		<p>Title of post: </p>
 		<input asp-for="TitleOfPost" placeholder="Title"><br />
 		<span asp-validation-for="TitleOfPost"></span>
 	</div>
-
+	<p>Date of create</p>
+	
 	<div>
 		<p>Description of post: </p>
 		<input asp-for="DescriptionOfPost" placeholder="Description" /><br />
@@ -16,7 +20,7 @@
 	</div>
 
 
-		
 
-<input type="submit" name="save" value="Save"/>
+
+	<input type="submit" name="save" value="Save" />
 </form>

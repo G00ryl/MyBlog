@@ -1,7 +1,8 @@
-﻿@model MyBlog.Models.Post
-
+﻿@model Post
+@{ 
+	ViewBag.Title = Model.TitleOfPost;
+}
 <h1>Id: @Model.Id</h1>
 <h2>Title: @Model.TitleOfPost</h2>
-
 <p> Description: @Model.DescriptionOfPost</p>
 <a asp-action="Index" asp-controller="Home">Home</a>
