@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Pictures\" />
   </ItemGroup>
 
   <ItemGroup>
