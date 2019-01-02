@@ -2,14 +2,38 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/_layout.css" />
+	<link href="~/Pictures/Vegetables.jpg" />
+	<link href="~/Pictures/home3.png" />
+	<link href="~/Pictures/logo.png" />
+	<link href="~/Pictures/avatar.png" />
 </head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
-</body>
+
+
+	<div>
+		<header>
+			<h1 id="logo">
+				<img src="~/Pictures/logo.png">
+			</h1>
+
+			<div class="container">
+				<img src="~/Pictures/avatar.png" alt="Avatar" class="image" style="width:100%">
+				<div class="middle">
+					<button class="button">Sign In</button>
+				</div>
+			</div>
+			<ul>
+				<li><a class="active" href="@Url.Action("index", "Home")"><img src="~/Pictures/home3.png" class="home"></a></li>
+				<li><a href="@Url.Action("contact", "Home")">Contact</a></li>
+				
+			</ul>
+		</header>
+		@RenderBody()
+	</div>
+
 <footer>
 	@RenderSection("footer", required:false)
 </footer>

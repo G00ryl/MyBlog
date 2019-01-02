@@ -2,32 +2,44 @@
 @{	
 	ViewBag.Title = "Home Page";
 }
+
 <body>
 	<header>
-		<h1>This is a blog about me!</h1>
+		<h1>This is a blog about Fit lifestyle! Everyone who is logged can add a post! </h1>
 	</header>
-	<a asp-action="Create">New Post!</a>
+	<div class="addpost">
+		<a asp-action="Create">New Post!</a>
+	</div>
 	@if (Model != null)
 	{
 		foreach (var post in Model.Posts)
-			{
-		<table>
-			<tr>
-				<td> @post.Id</td>
-				<td> @post.TitleOfPost</td>
-				<td> @post.DescriptionOfPost</td>
-				<td>
-					<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
-					<a asp-page="/Posts/Edit" asp-route-id="@post.Id">Edit</a>
-				</td>
-			</tr>
-		</table>
+		{
+			<div class="row">
+				<div class="leftcolumn">
+					<div class="card">
+						<h2>@post.TitleOfPost</h2>
+						<p>@post.Id</p>
+						<h5>Title description, Feb 18, 2017</h5>
+						<p>Post 2</p>
+
+						<p>
+							@post.DescriptionOfPost
+						</p>
+						<div class="seePost">
+							<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
+						</div>
+						<div class="seePost">
+							<a asp-page="/Posts/Edit" asp-route-id="@post.Id">Edit</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		}
-		@section footer{
-		<div>
-			<p>&copy; Website made by Dawid Gorla 2018."
-		</div>
-		 }
+			@section footer{
+				<div class="footer">
+					<p>&copy; Website made by Dawid Gorla 2018."
+				</div>
+		
+		}
 	}
 </body>
-</html>
