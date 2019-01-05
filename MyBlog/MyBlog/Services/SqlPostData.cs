@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
 using MyBlog.Models;
 
@@ -24,7 +25,7 @@ namespace MyBlog.Services
 
 		public Post Get(int id)
 		{
-			return _context.Posts.FirstOrDefault(r => r.Id == id);
+			return _context.Posts.Include(r=>r.Comments).FirstOrDefault(r => r.Id == id);
 		}
 
 		public IEnumerable<Post> GetAll()

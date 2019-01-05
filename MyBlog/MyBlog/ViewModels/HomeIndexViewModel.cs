@@ -9,6 +9,5 @@ namespace MyBlog.ViewModels
 	public class HomeIndexViewModel
 	{
 		public IEnumerable<Post> Posts { get; set; }
-	
 	}
 }
