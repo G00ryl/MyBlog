@@ -23,10 +23,7 @@ namespace MyBlog.Services
 			return post;
 		}
 
-		public Post Get(int id)
-		{
-			return _context.Posts.Include(r=>r.Comments).FirstOrDefault(r => r.Id == id);
-		}
+		public Post Get(int id) => _context.Posts.Include(r => r.Comments).FirstOrDefault(r => r.Id == id);
 
 		public IEnumerable<Post> GetAll()
 		{
@@ -35,7 +32,7 @@ namespace MyBlog.Services
 
 		public Post Update(Post post)
 		{
-			_context.Attach(post).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+			_context.Attach(post).State = EntityState.Modified;
 			_context.SaveChanges();
 			return post;
 		}

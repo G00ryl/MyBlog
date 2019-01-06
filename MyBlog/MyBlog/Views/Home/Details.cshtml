@@ -1,6 +1,6 @@
-﻿@model Post
+﻿@model MyBlog.ViewModels.DetailPostViewModel
 @{ 
-	ViewBag.Title = Model.TitleOfPost;
+	ViewBag.Title = Model.Post.TitleOfPost;
 }
 <head>
 	<meta name="viewport" content="width=device-width" />
@@ -11,33 +11,63 @@
 		<h1>Create Post:</h1>
 	</div>
 </head>
+
 <div class="card">
-	<h1>Id: @Model.Id</h1>
-	<h2>Title: @Model.TitleOfPost</h2>
-	<p> Description: @Model.DescriptionOfPost</p>
+	<h1>Id: @Model.Post.Id</h1>
+	<h2>Title: @Model.Post.TitleOfPost</h2>
+	<p> Description: @Model.Post.DescriptionOfPost</p>
 	<div class="seePost">
 		<a asp-action="Index" asp-controller="Home">Home</a>
 	</div>
 </div>
+
 <div>
-	<form method="post">
+	<form action="../Details/@Model.Post.Id.ToString()" method="post">
 
 		<div class="card">
 			<h2>Write a comment below:</h2>
 			<p>Description of comment: </p>
-			<textarea name="comment" rows="6" cols="40" placeholder="Comment" required></textarea>
+			@Html.TextAreaFor(model => model.CommentText, new
+	   {
+		   @Name = "commentText",
+		   @Rows = "6",
+		   @Cols = "40",
+		   @Placeholder = "Comment",
+		   @Required = "true"
+	   })
 			<p>Your nickname </p>
-			<input type="text" name="commentDescription" placeholder="Nickname" autofocus required />
+			@Html.TextBoxFor(model => model.CommentNick, new
+	   {
+		   @Name = "CommentNick",
+		   @Placeholder = "Nickname",
+		   @Required = "true"
+	   })
 		</div>
-		</div>
-			<div class="button">
-				<input type="submit" id="submit" name="save" value="Save" />
-			</div>
-			<div class="Comments">
-				<h2>Comments:</h2>
-
-
-			</div>
+		<div class="button">
+			<input type="submit" id="submit" name="save" value="Save" />
 		</div>
 	</form>
+
+	<div class="Comments">
+		<h2>Comments:</h2>
+		@if (Model != null)
+		{
+			foreach (var comment in Model.Post.Comments)
+			{
+				<div class="row">
+					<div class="leftcolumn">
+						<div class="card">
+							<h2>Description:</h2>
+							<p>
+								@comment.DescriptionOfComment
+							</p>
+							<h2>Nick:</h2>
+							<p>
+								@comment.NicknameOfCommenter
+							</p>
+						</div>
+					</div>
+				</div>
+			}
+		}
 </div>
