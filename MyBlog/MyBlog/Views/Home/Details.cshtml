@@ -1,7 +1,43 @@
-﻿@model MyBlog.Models.Post
+﻿@model Post
+@{ 
+	ViewBag.Title = Model.TitleOfPost;
+}
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/details.css" />
+	<div class="create">
+		<h1>Create Post:</h1>
+	</div>
+</head>
+<div class="card">
+	<h1>Id: @Model.Id</h1>
+	<h2>Title: @Model.TitleOfPost</h2>
+	<p> Description: @Model.DescriptionOfPost</p>
+	<div class="seePost">
+		<a asp-action="Index" asp-controller="Home">Home</a>
+	</div>
+</div>
+<div>
+	<form method="post">
 
-<h1>Id: @Model.Id</h1>
-<h2>Title: @Model.TitleOfPost</h2>
+		<div class="card">
+			<h2>Write a comment below:</h2>
+			<p>Description of comment: </p>
+			<textarea name="comment" rows="6" cols="40" placeholder="Comment" required></textarea>
+			<p>Your nickname </p>
+			<input type="text" name="commentDescription" placeholder="Nickname" autofocus required />
+		</div>
+		</div>
+			<div class="button">
+				<input type="submit" id="submit" name="save" value="Save" />
+			</div>
+			<div class="Comments">
+				<h2>Comments:</h2>
 
-<p> Description: @Model.DescriptionOfPost</p>
-<a asp-action="Index" asp-controller="Home">Home</a>
+
+			</div>
+		</div>
+	</form>
+</div>

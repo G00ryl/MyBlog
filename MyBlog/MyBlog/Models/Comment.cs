@@ -7,6 +7,7 @@ namespace MyBlog.Models
 {
 	public class Comment
 	{
+		public int id { get; set; }
 		public string DescriptionOfComment { get; set; }
 		public string NicknameOfCommenter { get; set; }
 		public Post Post { get; set; }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
 using MyBlog.Models;
 
@@ -24,12 +25,19 @@ namespace MyBlog.Services
 
 		public Post Get(int id)
 		{
-			return _context.Posts.FirstOrDefault(r => r.Id == id);
+			return _context.Posts.Include(r=>r.Comments).FirstOrDefault(r => r.Id == id);
 		}
 
 		public IEnumerable<Post> GetAll()
 		{
 			return _context.Posts.OrderBy(r => r.Id);
+		}
+
+		public Post Update(Post post)
+		{
+			_context.Attach(post).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+			_context.SaveChanges();
+			return post;
 		}
 	}
 }

@@ -1,0 +1,31 @@
+﻿@page "{id}"
+@using MyBlog.Pages.Posts
+@using MyBlog.Models
+@model EditModel
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/edit.css" />
+</head>
+
+<div class="edit">
+	<h1>Edit Post: " @Model.Post.TitleOfPost "</h1>
+</div>
+	<form method="post">
+		<div class="card">
+			<input type="hidden" asp-for="Post.Id" />
+			<div>
+				<p>Title of post: </p>
+				<input asp-for="Post.TitleOfPost" placeholder="Title"><br />
+				<span asp-validation-for="Post.TitleOfPost"></span>
+			</div>
+
+			<div>
+				<p>Description of post: </p>
+				<input asp-for="Post.DescriptionOfPost" placeholder="Description" /><br />
+				<span asp-validation-for="Post.DescriptionOfPost"></span>
+			</div> 
+			<input type="submit" id="submit" name="save" value="Save" />
+		</div>
+	</form>

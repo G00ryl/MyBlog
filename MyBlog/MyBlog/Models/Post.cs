@@ -10,5 +10,6 @@ namespace MyBlog.Models
 		public int Id { get; set; }
 		public string TitleOfPost { get; set; }
 		public string DescriptionOfPost { get; set; }
+		public List<Comment> Comments { get; set; }
 	}
 }

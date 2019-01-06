@@ -7,15 +7,28 @@ using System.Threading.Tasks;
 using MyBlog.Data;
 namespace MyBlog.Data
 {
-	public class MyBlogDbContext :DbContext
+	public class MyBlogDbContext : DbContext
 	{
+		public DbSet<Post> Posts { get; set; }
+		public DbSet<Comment> Comments { get; set; }
+
 		public MyBlogDbContext(DbContextOptions options)
 			: base(options)
 		{
 
 		}
-		public DbSet <Post> Posts { get; set; }
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+					.SelectMany(e => e.GetForeignKeys()))
+			{
+				relationship.DeleteBehavior = DeleteBehavior.Restrict;
+			}
 
-
+			modelBuilder.Entity<Post>()
+					.HasMany(x => x.Comments)
+					.WithOne(y => y.Post)
+					.IsRequired(false);
+		}
 	}
 }
