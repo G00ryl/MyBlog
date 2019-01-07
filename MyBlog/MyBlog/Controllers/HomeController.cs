@@ -95,6 +95,7 @@ namespace MyBlog.Controllers
 			return View();
 		}
 
+		[HttpGet]
 		public IActionResult Login()
 		{
 			return View();
