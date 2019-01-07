@@ -31,6 +31,7 @@ namespace MyBlog
 		{
 			services.AddDbContext<MyBlogDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MyBlog")));
 			services.AddScoped<IPostData, SqlPostData>();
+			services.AddScoped<ICommentData, SqlCommentData>();
 			services.AddMvc();
 		}
 

@@ -17,6 +17,7 @@ namespace MyBlog.Data
 		{
 
 		}
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			foreach (var relationship in modelBuilder.Model.GetEntityTypes()

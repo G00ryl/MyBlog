@@ -6,8 +6,8 @@ using MyBlog.Models;
 
 namespace MyBlog.Services
 {
-	interface ICommentData
+	public interface ICommentData
 	{
-		Comment Add(Comment comment, IPostData postData);
+		Comment Add(Comment comment, int postId);
 	}
 }
