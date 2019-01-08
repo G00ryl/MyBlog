@@ -11,6 +11,8 @@ namespace MyBlog.Data
 	{
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Comment> Comments { get; set; }
+		public DbSet<Administrator> Admins { get; set; }
+		public DbSet<ContactMessage> Messege { get; set; }
 
 		public MyBlogDbContext(DbContextOptions options)
 			: base(options)

@@ -111,6 +111,9 @@ li {
 	background-color: #32CD32;
 	padding: 40px;
 	margin-top: 10px;
+	border: 2px solid;
+	border-radius: 8px;
+}
 }
 
 

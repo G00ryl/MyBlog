@@ -11,8 +11,11 @@
 	background-color: #32CD32;
 	padding: 30px;
 	margin-top: 5px;
-	font-size:26px;
-	font-weight:200;
+	font-size: 26px;
+	font-weight: 200;
+	border: 2px solid;
+	border-radius: 8px;
+}
 }
 .button {
 	margin-top:20px;

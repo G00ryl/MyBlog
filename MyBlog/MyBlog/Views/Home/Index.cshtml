@@ -2,10 +2,12 @@
 @{	
 	ViewBag.Title = "Home Page";
 }
-
+<link rel="stylesheet" href="~/css/details.css" />
 <body>
 	<header>
-		<h1>This is a blog about Fit lifestyle! If u are admin, add the post! If you are a user, add a coment under the post, u don't need to log here!! </h1>
+		<div class="cardcomments" >
+			<h1>This is a blog about Fit lifestyle! If u are admin, add the post! If you are a user, add a coment under the post, u don't need to log here!! </h1>
+		</div>
 	</header>
 	<div class="addpost">
 		<a asp-action="Create">New Post!</a>
