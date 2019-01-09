@@ -24,12 +24,12 @@
 #submit {
 	padding: 10px;
 	font-size: 18px;
-	background-color: green;
+	background-image: linear-gradient( ForestGreen,FloralWhite );
 	border-radius: 12px;
 	font-weight: bolder;
 	border-color: black;
 	color: white;
 	transition: background-color 2s ease 0s;
-	margin-top:5px;
-	text-align:center;
+	margin-top: 5px;
+	text-align: center;
 }

@@ -89,16 +89,25 @@ namespace MyBlog.Controllers
 				return View();
 			}
 		}
-
+		[HttpGet]
 		public IActionResult Contact()
 		{
 			return View();
 		}
-
+		[HttpPost]
+		public IActionResult Contact(HomeIndexViewModel model)
+		{
+			return RedirectToAction(nameof(Index));
+		}
 		[HttpGet]
 		public IActionResult Login()
 		{
 			return View();
+		}
+		[HttpPost]
+		public IActionResult Login(HomeIndexViewModel model)
+		{
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

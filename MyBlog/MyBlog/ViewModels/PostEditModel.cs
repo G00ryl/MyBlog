@@ -11,7 +11,7 @@ namespace MyBlog.ViewModels
 		
 		[Required,MaxLength(50)]
 		public string TitleOfPost { get; set; }
-		[Required, MaxLength(1000)]
+		[Required, MaxLength(10000)]
 		public string DescriptionOfPost { get; set; }
 	}
 }

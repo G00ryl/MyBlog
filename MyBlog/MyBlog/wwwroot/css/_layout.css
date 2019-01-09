@@ -1,5 +1,5 @@
 ﻿body {
-	background-color:cadetblue;
+	background-image: linear-gradient(to right, Aquamarine, LightCyan );
 	font-family: Helvetica, Verdana, sans;
 	font-size: 100%;
 }
@@ -125,10 +125,14 @@ li {
 
 /* Footer */
 .footer {
+	
 	padding: 20px;
 	text-align: center;
 	background: #32CD32;
-	margin-top: 20px;
+	margin-top: 10%;
+	border:1px solid black;
+	border-radius:30px;
+	margin-bo:0%;
 }
 .addpost {
 	border-radius: 30px;

@@ -1,3 +1,104 @@
 ﻿body {
 }
+h1{
+	text-align:center;
+}
+p {
+	text-align: center;
+}
 
+input, textarea {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid gray;
+	display: block;
+}
+
+form {
+	background-image: linear-gradient(to right, IndianRed, LightCyan );
+	border-radius: 30px;
+	border: 2px solid;
+	margin-top: 10px;
+}
+.card {
+	background-color: #32CD32;
+	padding: 30px;
+	margin-top: 5px;
+	font-size: 26px;
+	font-weight: 200;
+	border: 2px solid;
+	border-radius: 8px;
+}
+
+}
+
+.button {
+	margin-top: 20px;
+}
+
+#submit {
+	padding: 10px;
+	font-size: 18px;
+	background-image: linear-gradient( ForestGreen,FloralWhite );
+	border-radius: 12px;
+	font-weight: bolder;
+	border-color: black;
+	color: white;
+	transition: background-color 2s ease 0s;
+	margin-top: 5px;
+	text-align: center;
+	width: 10%;
+	margin-bottom: 15px;
+	border: 2px solid black;
+}
+#reset {
+	padding: 10px;
+	font-size: 18px;
+	background-color: red;
+	border:2px solid black;
+	border-radius: 12px;
+	font-weight: bolder;
+	border-color: black;
+	color: white;
+	transition: background-color 2s ease 0s;
+	margin-top: 5px;
+	text-align: center;
+	width: 10%;
+	margin-bottom:15px;
+}
+.info {
+	background-color: #32CD32;
+	padding: 30px;
+	margin-top: 5px;
+	font-size: 26px;
+	font-weight: 200;
+	border: 2px solid;
+	border-radius: 8px;
+	text-align: center;
+}
+.alert {
+	background-image: linear-gradient(to right, LightBlue, LightSalmon );
+	margin-left: auto;
+	margin-right: auto;
+	background-color: Highlight;
+	padding: 50px;
+	margin-top: 5px;
+	font-size: 26px;
+	border: 2px solid black;
+	border-radius: 8px;
+	text-align: center;
+	width: 20%;
+	display: block;
+}
+.inputtext {
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid gray;
+	display: block;
+}
