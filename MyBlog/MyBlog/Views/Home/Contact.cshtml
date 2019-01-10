@@ -1,4 +1,4 @@
-﻿
+﻿@model MyBlog.ViewModels.ContactMessageViewModel
 @{
 	ViewBag.Title = "Contact";
 }
@@ -20,19 +20,41 @@
 	</p>
 </div>
 <div class="myForm">
-	<form  method="post">
+	<form method="post">
 		<h1>
 			Nickname:
 		</h1>
-		<input type="text" class="inputtext" name="nick" placeholder="Example" autofocus required>
-		<h1>Email:</h1>
-		<input type="email" class="inputtext" name="nick" placeholder="address@email.com" required>
-		<h1>Description of question:</h1>
-		<textarea name="kom" rows="6" cols="40" placeholder= "I have a question.." required></textarea>
+		<div class="inputtext">
+			@Html.TextBoxFor(model => model.Nickname, new
+		   {
+			   @Name = "Nickname",
+			   @Placeholder = "Nickname",
+			   @Required = "true"
+		   })
+		</div>
 
-		<input type="submit" id="submit" name="submit" value="Send">
-		<input type="reset" id="reset" value="Clear">
-	</form>
+		<h1>Email:</h1>
+		<div class="inputtext">
+			@Html.TextBoxFor(model => model.Email, new
+		   {
+			   @Name = "Nickname",
+			   @Placeholder = "address@email.com",
+			   @Required = "true"
+		   })
+
+		</div>
+			<h1>Description of question:</h1>
+			@Html.TextAreaFor(model => model.Description, new
+		   {
+			   @Name = "description",
+			   @Rows = "6",
+			   @Cols = "40",
+			   @Placeholder = "I have a question",
+			   @Required = "true"
+		   })
+			<input type="submit" id="submit" name="submit" value="Send">
+			<input type="reset" id="reset" value="Clear">
+</form>
 </div>
 @section footer{
 	<div class="footer">
@@ -40,4 +62,4 @@
 	</div>
 
 }
-	
+

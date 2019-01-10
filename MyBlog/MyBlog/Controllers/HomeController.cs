@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyBlog.Models;
 using MyBlog.Services;
 using MyBlog.ViewModels;
@@ -8,15 +9,17 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace MyBlog.Controllers
 {
-	public class HomeController :Controller
+	public class HomeController : Controller
 	{
 		private IPostData _postData;
 		private ICommentData _commentData;
+		private IContactMessageData _contactMessageData;
 
-		public HomeController(IPostData postData, ICommentData commentData)
+		public HomeController(IPostData postData, ICommentData commentData, IContactMessageData contactMessageData)
 		{
 			_postData = postData;
 			_commentData = commentData;
+			_contactMessageData = contactMessageData;
 		}
 
 		public IActionResult Index()
@@ -90,25 +93,47 @@ namespace MyBlog.Controllers
 				return View();
 			}
 		}
+
 		[HttpGet]
 		public IActionResult Contact()
 		{
 			return View();
 		}
+
 		[HttpPost]
-		public IActionResult Contact(HomeIndexViewModel model)
+		public IActionResult Contact(ContactMessageViewModel model)
 		{
-			return RedirectToAction(nameof(Index));
+			if (ModelState.IsValid)
+			{
+				var newContactMessage = new ContactMessage
+				{
+					Nickname = model.Nickname,
+					Email = model.Email,
+					Description = model.Description
+				};
+
+
+				newContactMessage = _contactMessageData.AddContactMessage(newContactMessage);
+
+				return RedirectToAction(nameof(Index));
+			}
+			else
+			{
+				return View();
+			}
 		}
-		[HttpGet]
+
+		[Authorize]
 		public IActionResult Login()
 		{
 			return View();
 		}
+
 		[HttpPost]
 		public IActionResult Login(HomeIndexViewModel model)
 		{
 			return RedirectToAction(nameof(Index));
 		}
+
 	}
 }
