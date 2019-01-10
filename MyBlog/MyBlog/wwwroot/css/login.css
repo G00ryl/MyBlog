@@ -21,7 +21,7 @@ p {
 	border: 1px solid gray;
 	display: block;
 }
-form {
+.myForm {
 	background-image: linear-gradient(to right, IndianRed,Cyan );
 	border-radius: 30px;
 	border: 2px solid;

@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html>
+
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
@@ -10,6 +10,7 @@
 	<link href="~/Pictures/home3.png" />
 	<link href="~/Pictures/logo.png" />
 	<link href="~/Pictures/avatar.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -18,18 +19,23 @@
 		<h5 id="logo">
 			<img src="~/Pictures/logo.png">
 		</h5>
-
-		<div class="container">
-			<img src="~/Pictures/avatar.png" alt="Avatar" class="image" style="width:100%">
-			<div class="middle">
-				<a class="button" href="@Url.Action("login","Home")" style="color:black">Sign In</a>
-			</div>
+		<div class="seeForm">
+			<form>
+				<input type="text" name="text" class="search" placeholder="Search.." />
+				<input type="submit" name="submit" class="submited" value="Search" />
+			</form>
 		</div>
-		<ul>
-			<li><a class="active"  href="@Url.Action("index", "Home")"><img src="~/Pictures/home3.png" class="home"></a></li>
-			<li><a href="@Url.Action("contact", "Home")" style="color:black">Contact</a></li>
+			<div class="container">
+				<img src="~/Pictures/avatar.png" alt="Avatar" class="image" style="width:100%">
+				<div class="middle">
+					<a class="button" href="@Url.Action("login","Home")" style="color:black">Sign In</a>
+				</div>
+			</div>
+			<ul>
+				<li><a class="active" href="@Url.Action("index", "Home")"><img src="~/Pictures/home3.png" class="home"></a></li>
+				<li><a href="@Url.Action("contact", "Home")" style="color:black">Contact</a></li>
 
-		</ul>
+			</ul>
 	</header>
 	</div>
 	@RenderBody()
@@ -39,4 +45,3 @@
 			@RenderSection("footer", required: false)
 		</footer>
 	</div>
-</html>

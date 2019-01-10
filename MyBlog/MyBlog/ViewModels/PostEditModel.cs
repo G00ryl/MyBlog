@@ -13,5 +13,7 @@ namespace MyBlog.ViewModels
 		public string TitleOfPost { get; set; }
 		[Required, MaxLength(10000)]
 		public string DescriptionOfPost { get; set; }
+		[Required]
+		public string Tags { get; set; }
 	}
 }

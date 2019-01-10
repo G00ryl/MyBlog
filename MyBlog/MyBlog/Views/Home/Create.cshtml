@@ -7,11 +7,11 @@
 	<title>@ViewBag.Title</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="~/css/create.css" />
-	<div class="create">
-		<h1>Create Post:</h1>
-	</div>
+	
 </head>
-
+<div class="create">
+	<h1>Create Post:</h1>
+</div>
 <form method="post">
 
 	<div class="card">
@@ -21,6 +21,20 @@
 		<p>Description of post: </p>
 		<input asp-for="DescriptionOfPost" placeholder="Description" /><br />
 		<span asp-validation-for="DescriptionOfPost"></span>
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<br />
+			@Html.TextBoxFor(model => model.Tags, new
+	   {
+		   @type = "text",
+		   @class = "form-control bg-dark",
+		   @id = "tags",
+		   @placeholder = "Enter post's tags",
+		   @pattern = @"^[a-z\-\;]+([a-z\-\;]+)*$",
+		   @minlength = "3",
+		   @maxlength = "200"
+	   })
+		</div>
 		<div class="button">
 		<input type="submit" id="submit" name="save" value="Save" />
 		</div>

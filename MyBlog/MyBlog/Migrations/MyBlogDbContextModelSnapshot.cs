@@ -75,6 +75,8 @@ namespace MyBlog.Migrations
 
                     b.Property<string>("DescriptionOfPost");
 
+                    b.Property<string>("Tags");
+
                     b.Property<string>("TitleOfPost");
 
                     b.HasKey("Id");

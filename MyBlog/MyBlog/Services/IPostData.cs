@@ -12,5 +12,5 @@ namespace MyBlog.Services
 		Post Get(int id);
 		Post Add(Post post);
 		Post Update(Post post);
-	}
+			}
 }

@@ -76,7 +76,8 @@ namespace MyBlog.Controllers
 				var newPost = new Post
 				{
 					TitleOfPost = model.TitleOfPost,
-					DescriptionOfPost = model.DescriptionOfPost
+					DescriptionOfPost = model.DescriptionOfPost,
+					Tags = model.Tags
 				};
 
 

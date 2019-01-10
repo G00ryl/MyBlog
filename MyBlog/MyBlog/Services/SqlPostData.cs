@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
 using MyBlog.Models;
 
+
 namespace MyBlog.Services
 {
 	public class SqlPostData : IPostData
@@ -36,5 +37,6 @@ namespace MyBlog.Services
 			_context.SaveChanges();
 			return post;
 		}
+		
 	}
 }
