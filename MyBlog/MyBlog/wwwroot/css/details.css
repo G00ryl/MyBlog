@@ -61,5 +61,28 @@ textarea {
 	border: 1px solid gray;
 	display: block;
 }
+.seeForm {
+	width: 900px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	margin-left: 1px;
+}
+.search {
+	width: 60%;
+	padding: 15px;
+	font-size: 20px;
+	border: 1px solid;
+	border-radius: 13px;
+	background-color: lightseagreen;
+}
 
-
+.submited {
+	width: 200px;
+	padding: 10px;
+	font-size: 20px;
+	background-color: #4CAF50;
+	color: black;
+	border: 1px solid;
+	border-radius: 13px;
+}

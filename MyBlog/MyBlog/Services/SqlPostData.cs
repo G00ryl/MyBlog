@@ -25,10 +25,11 @@ namespace MyBlog.Services
 		}
 
 		public Post Get(int id) => _context.Posts.Include(r => r.Comments).FirstOrDefault(r => r.Id == id);
+	
 
 		public IEnumerable<Post> GetAll()
 		{
-			return _context.Posts.OrderBy(r => r.Id);
+			return _context.Posts.OrderByDescending(r => r.Id);
 		}
 
 		public Post Update(Post post)

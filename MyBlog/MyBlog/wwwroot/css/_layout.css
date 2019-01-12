@@ -57,11 +57,11 @@ li {
 	top: 0;
 	opacity: 1;
 	display: block;
-	width: 70%;
 	height: auto;
 	transition: .5s ease;
 	backface-visibility: hidden;
-	margin-right: 0
+	margin-right: 0px;
+
 }
 
 .middle {
@@ -176,4 +176,3 @@ li {
 	border: 1px solid;
 	border-radius: 13px;
 }
-.

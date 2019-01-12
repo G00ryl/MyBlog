@@ -31,3 +31,14 @@ C:\Users\Dawid\source\repos\Myblog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.
 C:\Users\Dawid\source\repos\Myblog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfo.cs
 C:\Users\Dawid\source\repos\Myblog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.dll
 C:\Users\Dawid\source\repos\Myblog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.pdb
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.deps.json
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.runtimeconfig.json
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.runtimeconfig.dev.json
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.dll
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.pdb
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.csprojAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.csproj.CoreCompileInputs.cache
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfoInputs.cache
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfo.cs
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.dll
+C:\Users\Dawid\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.pdb

@@ -12,6 +12,12 @@
 <div class="addpost">
 	<a asp-action="Create">New Post!</a>
 </div>
+<div class="seeForm">
+	<form>
+		<input type="text" name="text" class="search" placeholder="Search.." />
+		<input type="submit" name="submit" class="submited" value="Search" />
+	</form>
+</div>
 @if (Model != null)
 {
 	foreach (var post in Model.Posts)
@@ -25,7 +31,7 @@
 					<p>
 						@post.DescriptionOfPost
 					</p>
-					<p>Tags: @post.Tags</p>
+					<p>Category: @post.Tags</p>
 					<div class="seePost">
 						<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
 					</div>
@@ -38,10 +44,9 @@
 	}
 }
 <hr>
-@section footer{ 
+@section footer{
 	<div class="footer">
 		<h2>&copy; Website made by Dawid Gorla 2018."</h2>}
 </div>
 
 
-	

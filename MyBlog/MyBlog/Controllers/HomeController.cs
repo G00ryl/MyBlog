@@ -123,7 +123,7 @@ namespace MyBlog.Controllers
 			}
 		}
 
-		[Authorize]
+		[HttpGet]
 		public IActionResult Login()
 		{
 			return View();
