@@ -1,1 +1,42 @@
-﻿
+﻿@model IEnumerable<Post>
+
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/searchPost.css" />
+</head>
+<body>
+	<div class="logIn">
+		<h1>Results:</h1>
+	</div>
+
+	@if (Model != null)
+	{
+		foreach (var post in Model)
+		{
+			<div class="row">
+				<div class="leftcolumn">
+					<div class="card">
+						<h1>Title of post:</h1>
+						<h2>@post.TitleOfPost</h2>
+						<hr />
+						<p>Id: @post.Id</p>
+						<hr />
+						<h2>Description:</h2>
+						<p>
+							@post.DescriptionOfPost
+						</p>
+						<hr />
+						<p>Category: @post.Tags</p>
+					</div>
+				</div>
+			</div>
+		}
+	}
+</body>
+<hr />
+	@section footer{
+		<div class="footer">
+			<h2>&copy; Website made by Dawid Gorla 2018."</h2>}
+</div>

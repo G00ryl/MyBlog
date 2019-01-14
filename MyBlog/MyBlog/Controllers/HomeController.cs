@@ -134,6 +134,13 @@ namespace MyBlog.Controllers
 		{
 			return RedirectToAction(nameof(Index));
 		}
+		[HttpGet]
+		public IActionResult Search(string query)
+		{
+			var posts = _postData.GetAllPosts(query);
 
+			return View("SearchPost", posts);
+		}
+	
 	}
 }

@@ -38,6 +38,9 @@ namespace MyBlog.Services
 			_context.SaveChanges();
 			return post;
 		}
-		
+		public IEnumerable<Post> GetAllPosts(string category)
+		{
+			return _context.Posts.Where(x => x.Tags.ToLowerInvariant().Contains(category.ToLowerInvariant())).AsEnumerable();
+		}
 	}
 }

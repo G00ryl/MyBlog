@@ -13,9 +13,9 @@
 	<a asp-action="Create">New Post!</a>
 </div>
 <div class="seeForm">
-	<form>
-		<input type="text" name="text" class="search" placeholder="Search.." />
-		<input type="submit" name="submit" class="submited" value="Search" />
+	<form asp-controller="Home" asp-action="Search" method="get">
+		<input type="text" name="query" id="query" class="search" placeholder="Search.." />
+		<input type="submit" name="submit" class="submited" value="Filter" />
 	</form>
 </div>
 @if (Model != null)
@@ -25,12 +25,15 @@
 		<div class="row">
 			<div class="leftcolumn">
 				<div class="card">
-					<h2>@post.TitleOfPost:</h2>
-					<p>@post.Id</p>
+					<h1>Title of post:</h1>
+					<h2>@post.TitleOfPost</h2>
+					<p>Id: @post.Id</p>
+					<hr />
 					<h2>Description:</h2>
 					<p>
 						@post.DescriptionOfPost
 					</p>
+					<hr />
 					<p>Category: @post.Tags</p>
 					<div class="seePost">
 						<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
