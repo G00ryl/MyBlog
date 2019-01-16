@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MyBlog.ViewModels.LoginViewModel
+@{
 	ViewBag.Title = "Login";
 }
 <head>
@@ -12,17 +13,14 @@
 	<p>If u are an admin Log In to add the post, if u are a user, please write a contact form to be a admin!</p>
 </div>
 <div >
-	<form method="post" class="myForm">
+	<form asp-action="Login" asp-controller="Home" method="post" class="myForm">
 		<h1>Log In</h1>
 		<hr />
-		<h2>
-			Nickname:
-		</h2>
-		<input type="text" class="inputtext" name="nick" placeholder="admin1234" autofocus required>
+		<h2>Nickname:</h2>
+		<input type="text" class="inputtext" name="Nick" placeholder="Enter your nick" required>
 		<h2>Password</h2>
-		<input type="password" class="inputtext" name="nick" placeholder="Hashed password" required>
-
-		<input type="submit" id="submit" name="submit" value="Log In">
+		<input type="password" class="inputtext" name="Password" placeholder="Enter your password" required>
+		<button type="submit" value="submit">Log In</button>
 	</form>
 </div>
 @section footer{

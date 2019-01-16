@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Models;
 using MyBlog.Services;
@@ -14,12 +15,15 @@ namespace MyBlog.Controllers
 		private IPostData _postData;
 		private ICommentData _commentData;
 		private IContactMessageData _contactMessageData;
+        private IAdministratorData _administratorData;
 
-		public HomeController(IPostData postData, ICommentData commentData, IContactMessageData contactMessageData)
+		public HomeController(IPostData postData, ICommentData commentData, IContactMessageData contactMessageData,
+            IAdministratorData administratorData)
 		{
 			_postData = postData;
 			_commentData = commentData;
 			_contactMessageData = contactMessageData;
+            _administratorData = administratorData;
 		}
 
 		public IActionResult Index()
@@ -130,10 +134,23 @@ namespace MyBlog.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Login(HomeIndexViewModel model)
+		public IActionResult Login(LoginViewModel model)
 		{
-			return RedirectToAction(nameof(Index));
-		}
+            try
+            {
+                var admin = _administratorData.Login(model);
+
+                HttpContext.Session.SetString("Login", admin.Login);
+                HttpContext.Session.SetString("Id", admin.id.ToString());
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception)
+            {
+                ModelState.Clear();
+                return View();
+            }
+        }
 		[HttpGet]
 		public IActionResult Search(string query)
 		{
@@ -141,6 +158,5 @@ namespace MyBlog.Controllers
 
 			return View("SearchPost", posts);
 		}
-	
 	}
 }
