@@ -10,5 +10,7 @@ namespace MyBlog.Services
     public interface IAdministratorData
     {
         Administrator Login(LoginViewModel model);
-    }
+		Administrator Add(Administrator admin);
+
+	}
 }

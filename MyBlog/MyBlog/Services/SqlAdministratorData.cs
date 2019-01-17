@@ -28,5 +28,11 @@ namespace MyBlog.Services
 
             return admin;
         }
-    }
+		public Administrator Add(Administrator admin)
+		{
+			_context.Admins.Add(admin);
+			_context.SaveChanges();
+			return admin;
+		}
+	}
 }

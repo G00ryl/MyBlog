@@ -175,5 +175,24 @@ namespace MyBlog.Controllers
 		{
 			return View();
 		}
+		[HttpPost]
+		public IActionResult NewAdmin(NewAdminViewModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				var newAdmin = new Administrator
+				{
+					Login = model.Login,
+					Password = model.Password,
+				};
+				newAdmin = _administratorData.Add(newAdmin);
+
+				return RedirectToAction(nameof(Index));
+			}
+			else
+			{
+				return View();
+			}
+		}
 	}
 }
