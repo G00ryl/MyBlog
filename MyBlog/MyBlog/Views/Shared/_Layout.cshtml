@@ -1,6 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Http
 
-
+<!DOCTYPE html>
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
@@ -19,18 +20,28 @@
 		<h5 id="logo">
 			<img src="~/Pictures/logo.png">
 		</h5>
-		
+		@if (Context.Session.GetString("Login") == null)
+		{
 			<div class="container">
 				<img src="~/Pictures/avatar.png" alt="Avatar" class="image" style="width:100%">
 				<div class="middle">
-					<a class="button" href="@Url.Action("Login","Home")" style="color:black">Sign In</a>
+					<a class="button" href="@Url.Action("Login", "Home")" style="color:black"> Sign In </a>
 				</div>
 			</div>
-			<ul>
-				<li><a class="active" href="@Url.Action("index", "Home")"><img src="~/Pictures/home3.png" class="home"></a></li>
-				<li><a href="@Url.Action("contact", "Home")" style="color:black">Contact</a></li>
-
-			</ul>
+		}
+		else if(Context.Session.GetString("Login") != null)
+		{
+			<div class="container">
+				<img src="~/Pictures/avatar.png" alt="Avatar" class="image" style="width:100%">
+				<div class="middle">
+					<a class="button" href="@Url.Action("AdminPanel", "Home")" style="color:black"> Admin Panel </a>
+				</div>
+			</div>
+		}
+		<ul>
+			<li><a class="active" href="@Url.Action("index", "Home")"><img src="~/Pictures/home3.png" class="home"></a></li>
+			<li><a href="@Url.Action("contact", "Home")" style="color:black">Contact</a></li>
+		</ul>
 	</header>
 	</div>
 	@RenderBody()

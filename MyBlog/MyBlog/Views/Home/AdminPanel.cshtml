@@ -1,0 +1,37 @@
+﻿@{
+	ViewBag.Title = "AdminPanel";
+}
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/adminpanel.css" />
+</head>
+
+<div class="logIn">
+	<h1>
+		Hello Admin! Here u can check a contact messages, create a post or add a new admin.
+	</h1>
+</div>
+<div class="row">
+	<div class="column" style="background-color:#aaa;">
+		<div class="addpost">
+			<a asp-action="Create">New Post!</a>
+		</div>
+	</div>
+	<div class="column" style="background-color:#bbb;">
+		<div class="addpost">
+			<a href="@Url.Action("ContactMessages", "Home")" style="color:black"> Check contact messages! </a>
+		</div>
+	</div>
+	<div class="column" style="background-color:#ccc;">
+		<div class="addpost">
+			<a href="@Url.Action("NewAdmin", "Home")" style="color:black"> Add new admin! </a>
+		</div>
+	</div>
+</div>
+@section footer{
+	<div class="footer">
+		<p>&copy; Website made by Dawid Gorla 2018."
+	</div>
+}

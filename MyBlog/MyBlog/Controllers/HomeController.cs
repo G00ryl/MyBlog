@@ -158,5 +158,22 @@ namespace MyBlog.Controllers
 
 			return View("SearchPost", posts);
 		}
+		[HttpGet]
+		public IActionResult AdminPanel()
+		{
+			return View();
+		}
+		[HttpGet]
+		public IActionResult ContactMessages()
+		{
+			var model = new ContactMessagesViewModelcs();
+			model.Message = _contactMessageData.GetAll();
+			return View(model);
+		}
+		[HttpGet]
+		public IActionResult NewAdmin()
+		{
+			return View();
+		}
 	}
 }

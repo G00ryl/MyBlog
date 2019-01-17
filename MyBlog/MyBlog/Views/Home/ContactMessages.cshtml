@@ -1,0 +1,36 @@
+﻿@model ContactMessagesViewModelcs
+@{
+	ViewBag.Title = "Contact Messages";
+}
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="~/css/contactMessages.css" />
+
+</head>
+
+@if (Model != null)
+{
+	foreach (var message in Model.Message)
+	{
+		<div class="row">
+			<div class="leftcolumn">
+				<div class="card">
+					<h1>Nickname:</h1>
+					<h2>@message.Nickname</h2>
+					<h2>ID:</h2>
+					<p>Id: @message.Id</p>
+					<hr />
+					<h2>E-mail:</h2>
+					<p>
+						@message.Email
+					</p>
+					<hr />
+					<h2>Description:</h2>
+					<p> @message.Description</p>
+				</div>
+			</div>
+		</div>
+	}
+}

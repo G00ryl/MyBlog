@@ -10,5 +10,6 @@ namespace MyBlog.Services
 	public interface IContactMessageData
 	{
 		ContactMessage AddContactMessage(ContactMessage message);
+		IEnumerable<ContactMessage> GetAll();
 	}
 }

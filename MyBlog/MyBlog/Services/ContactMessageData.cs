@@ -4,13 +4,13 @@ using MyBlog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace MyBlog.Services
 {
 	public class ContactMessageData : IContactMessageData
 	{
-		public readonly  MyBlogDbContext _context;
+		public readonly MyBlogDbContext _context;
 
 		public ContactMessageData(MyBlogDbContext context)
 		{
@@ -18,10 +18,15 @@ namespace MyBlog.Services
 		}
 		public ContactMessage AddContactMessage(ContactMessage message)
 		{
-			 _context.Messege.Add(message);
-			 _context.SaveChanges();
+			_context.Messege.Add(message);
+			_context.SaveChanges();
 			return message;
 		}
+		public IEnumerable<ContactMessage> GetAll()
+		{
+			return _context.Messege.OrderByDescending(r => r.Id);
+		}
+
 	}
 }
 

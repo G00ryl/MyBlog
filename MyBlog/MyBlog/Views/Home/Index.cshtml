@@ -9,9 +9,7 @@
 		<h1>This is a blog about Fit lifestyle! If u are admin, add the post! If you are a user, add a coment under the post, u don't need to log here!! </h1>
 	</div>
 </header>
-<div class="addpost">
-	<a asp-action="Create">New Post!</a>
-</div>
+
 <div class="seeForm">
 	<form asp-controller="Home" asp-action="Search" method="get">
 		<input type="text" name="query" id="query" class="search" placeholder="Search.." />
@@ -37,9 +35,6 @@
 					<p>Category: @post.Tags</p>
 					<div class="seePost">
 						<a asp-action="Details" asp-route-id="@post.Id"> See Post</a>
-					</div>
-					<div class="seePost">
-						<a asp-page="/Posts/Edit" asp-route-id="@post.Id">Edit</a>
 					</div>
 				</div>
 			</div>

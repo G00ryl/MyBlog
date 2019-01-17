@@ -1,0 +1,31 @@
+﻿
+.logIn {
+	background-image: linear-gradient(to right, LightBlue, LightSalmon );
+	border-radius: 30px;
+	border: 2px solid;
+	margin-top: 10px;
+	padding: 20px;
+}
+
+
+.column {
+	margin-left:10px;
+	margin-top:20px;
+	float: left;
+	width: 30.33%;
+	padding: 20px;
+	border:1px solid black;
+	background-color:lightblue;
+	border-radius:15px;
+	text-align:center;
+	
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	background-color: lightblue;
+}
+
+
