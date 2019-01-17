@@ -11,11 +11,11 @@
 </head>
 <form method="post">
 	<div class="card">
-		<p>Title of post: </p>
-		<input asp-for="Login" placeholder="Title"><br />
+		<p>Login for new admin: </p>
+		<input asp-for="Login" placeholder="Login"><br />
 		<span asp-validation-for="Login"></span>
-		<p>Description of post: </p>
-		<input asp-for="Password" placeholder="Description" /><br />
+		<p>Password for new admin: </p>
+		<input asp-for="Password" placeholder="Password" /><br />
 	<span asp-validation-for="Password"></span>	
 		<div class="button">
 			<input type="submit" id="submit" name="save" value="Save" />
