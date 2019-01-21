@@ -53,3 +53,4 @@ C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlo
 C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfo.cs
 C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.dll
 C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.pdb
+C:\Users\banan\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

@@ -13,6 +13,7 @@ using MyBlog.Services;
 using MyBlog.Models;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace MyBlog
 {
@@ -39,12 +40,17 @@ namespace MyBlog
 				options.IdleTimeout = TimeSpan.FromHours(2);
 			});
 
-            services.AddDbContext<MyBlogDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MyBlog")));
+			#region DatabaseConnection
+			services.AddDbContext<MyBlogDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MyBlog")));
+			#endregion
+
+			#region Services
 			services.AddScoped<IPostData, SqlPostData>();
             services.AddScoped<ICommentData, SqlCommentData>();
             services.AddScoped<IContactMessageData, ContactMessageData>();
             services.AddScoped<IAdministratorData, SqlAdministratorData>();
-        }
+			#endregion
+		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILogger<Startup> logger)
@@ -60,7 +66,8 @@ namespace MyBlog
 
 			app.UseStaticFiles();
             app.UseSession();
-            app.UseMvc(configureRoutes);
+
+			app.UseMvc(configureRoutes);
 			
 			
 			app.Run(async (context) =>

@@ -7,6 +7,8 @@
 	<title>@ViewBag.Title</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="~/css/login.css" />
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 <div class="logIn">
 	<h1>!INFO!</h1>
@@ -20,6 +22,10 @@
 		<input type="text" class="inputtext" name="Nick" placeholder="Enter your nick" required>
 		<h2>Password</h2>
 		<input type="password" class="inputtext" name="Password" placeholder="Enter your password" required>
+
+		
+			<div class="g-recaptcha" data-sitekey="6Ld9mYsUAAAAAEgV8NnF_WMNbX5uk7pnFdNwOoyZ"></div>
+		
 		<button type="submit" value="submit">Log In</button>
 	</form>
 </div>

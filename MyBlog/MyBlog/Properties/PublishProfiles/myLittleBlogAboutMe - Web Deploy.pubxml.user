@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHStppQm6a06v9tdL98yQ2wAAAAACAAAAAAAQZgAAAAEAACAAAAAfJsuRHP4lmqdhLHFNgdXduwrHDCemT6p2uxhM/aSRQgAAAAAOgAAAAAIAACAAAABnQx6E3ILCvY5dDKoGFZ1nVPk0trQMfqTk5w5r5ms1P4AAAAB2HwV5Wi9QOpZ3gEqXCi+0Pk38NdY9ZYPl4kQym+2J/V9iOgpG19StbpnyWXLjyQc8D5yqGjNo2MBBMd4fQs4/JGsNaIH78LwrZYMh6ecsoYP/rluCu4NzYb5dnKepmNptHDZKjN/6rgKb9RwMDShf7Bzv3iBB60its9L72kkfi0AAAADOFHNcYoldvQvLRfGxQAV+kULMbGweAqxXk1Q3eQaX8YwK1RZqY4iwl8FvIKCsGTfaxSVqwNmS1xJOruKF7YnY</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MyBlog">
+      <Value>Data Source=tcp:mygorlaserver.database.windows.net,1433%3bInitial Catalog=MyBlog20190120105827_db%3bUser Id=adminGorla%40mygorlaserver%3bPassword=25%24a!X.pwO8%25</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MyBlog.Data.MyBlogDbContext">
+      <Value>Data Source=tcp:mygorlaserver.database.windows.net,1433%3bInitial Catalog=MyBlog20190120105827_db%3bUser Id=adminGorla%40mygorlaserver%3bPassword=25%24a!X.pwO8%25</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
