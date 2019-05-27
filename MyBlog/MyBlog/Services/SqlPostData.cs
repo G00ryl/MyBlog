@@ -42,5 +42,13 @@ namespace MyBlog.Services
 		{
 			return _context.Posts.Where(x => x.Tags.ToLowerInvariant().Contains(category.ToLowerInvariant())).AsEnumerable();
 		}
-	}
+       public void Delete(int id)
+        {
+            var post = _context.Posts.SingleOrDefault(x => x.Id == id);
+            _context.Posts.Remove(post);
+            _context.SaveChanges();
+        }
+
+       
+    }
 }

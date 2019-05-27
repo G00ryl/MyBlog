@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@using MyBlog.Pages.Posts
+@model EditModel
+<div class="create">
+    <h1>Edit @Model.Post.TitleOfPost</h1>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="Post.Id" />
+    <div class="card">
+        <p>Title of post: </p>
+        <input asp-for="Post.TitleOfPost" placeholder="Title"><br />
+        <span asp-validation-for="Post.TitleOfPost"></span>
+        <p>Description of post: </p>
+        <input asp-for="Post.DescriptionOfPost" placeholder="Description" /><br />
+        <span asp-validation-for="Post.DescriptionOfPost"></span>
+        <div class="button">
+            <input type="submit" id="submit" name="save" value="Save" />
+        </div>
+    </div>
+</form>

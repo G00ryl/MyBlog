@@ -54,3 +54,15 @@ C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlo
 C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.dll
 C:\Users\Cyber\Desktop\MyBlog-master\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.pdb
 C:\Users\banan\Documents\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.deps.json
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.runtimeconfig.json
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.runtimeconfig.dev.json
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.dll
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\bin\Debug\netcoreapp2.0\MyBlog.pdb
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.csprojAssemblyReference.cache
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.csproj.CoreCompileInputs.cache
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfoInputs.cache
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.AssemblyInfo.cs
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.dll
+C:\Users\banan\OneDrive\Dokumenty\GitHub\MyBlog\MyBlog\MyBlog\obj\Debug\netcoreapp2.0\MyBlog.pdb

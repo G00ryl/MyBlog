@@ -13,5 +13,6 @@ namespace MyBlog.Services
 		Post Add(Post post);
 		Post Update(Post post);
 		IEnumerable<Post> GetAllPosts(string category);
-	}
+        void Delete(int id);
+    }
 }

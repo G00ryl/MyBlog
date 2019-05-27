@@ -10,132 +10,132 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace MyBlog.Controllers
 {
-	public class HomeController : Controller
-	{
-		private IPostData _postData;
-		private ICommentData _commentData;
-		private IContactMessageData _contactMessageData;
+    public class HomeController : Controller
+    {
+        private IPostData _postData;
+        private ICommentData _commentData;
+        private IContactMessageData _contactMessageData;
         private IAdministratorData _administratorData;
 
-		public HomeController(IPostData postData, ICommentData commentData, IContactMessageData contactMessageData,
+        public HomeController(IPostData postData, ICommentData commentData, IContactMessageData contactMessageData,
             IAdministratorData administratorData)
-		{
-			_postData = postData;
-			_commentData = commentData;
-			_contactMessageData = contactMessageData;
+        {
+            _postData = postData;
+            _commentData = commentData;
+            _contactMessageData = contactMessageData;
             _administratorData = administratorData;
-		}
+        }
 
-		public IActionResult Index()
-		{
-			var model = new HomeIndexViewModel();
-			model.Posts = _postData.GetAll();
-			return View(model);
-		}
+        public IActionResult Index()
+        {
+            var model = new HomeIndexViewModel();
+            model.Posts = _postData.GetAll();
+            return View(model);
+        }
 
-		[HttpGet]
-		public IActionResult Details(int id)
-		{
-			var model = new DetailPostViewModel { Post = _postData.Get(id) };
-			if (model == null)
-			{
-				return RedirectToAction(nameof(Index));
-			}
-			return View(model);
-		}
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var model = new DetailPostViewModel { Post = _postData.Get(id) };
+            if (model == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
 
-		[HttpPost]
-		public IActionResult Details(int id, DetailPostViewModel model)
-		{
-			if (!ModelState.IsValid)
-			{
-				RedirectToAction("Details", "Home", id);
-			}
+        [HttpPost]
+        public IActionResult Details(int id, DetailPostViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("Details", "Home", id);
+            }
 
-			try
-			{
-				var comment = new Comment
-				{
-					DescriptionOfComment = model.CommentText,
-					NicknameOfCommenter = model.CommentNick
-				};
+            try
+            {
+                var comment = new Comment
+                {
+                    DescriptionOfComment = model.CommentText,
+                    NicknameOfCommenter = model.CommentNick
+                };
 
-				comment = _commentData.Add(comment, id);
-				return RedirectToAction("Details", "Home", id);
-			}
-			catch (Exception)
-			{
-				return RedirectToAction("Index", "Home");
-			}
-		}
+                comment = _commentData.Add(comment, id);
+                return RedirectToAction("Details", "Home", id);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
 
-		[HttpGet]
-		public IActionResult Create()
-		{
-			return View();
-		}
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
-		[HttpPost]
-		public IActionResult Create(PostEditModel model)
-		{
-			if (ModelState.IsValid)
-			{
-				var newPost = new Post
-				{
-					TitleOfPost = model.TitleOfPost,
-					DescriptionOfPost = model.DescriptionOfPost,
-					Tags = model.Tags
-				};
-
-
-				newPost = _postData.Add(newPost);
-
-				return RedirectToAction(nameof(Details), new { id = newPost.Id });
-			}
-			else
-			{
-				return View();
-			}
-		}
-
-		[HttpGet]
-		public IActionResult Contact()
-		{
-			return View();
-		}
-
-		[HttpPost]
-		public IActionResult Contact(ContactMessageViewModel model)
-		{
-			if (ModelState.IsValid)
-			{
-				var newContactMessage = new ContactMessage
-				{
-					Nickname = model.Nickname,
-					Email = model.Email,
-					Description = model.Description
-				};
+        [HttpPost]
+        public IActionResult Create(PostEditModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var newPost = new Post
+                {
+                    TitleOfPost = model.TitleOfPost,
+                    DescriptionOfPost = model.DescriptionOfPost,
+                    Tags = model.Tags
+                };
 
 
-				newContactMessage = _contactMessageData.AddContactMessage(newContactMessage);
+                newPost = _postData.Add(newPost);
 
-				return RedirectToAction(nameof(Index));
-			}
-			else
-			{
-				return View();
-			}
-		}
+                return RedirectToAction(nameof(Details), new { id = newPost.Id });
+            }
+            else
+            {
+                return View();
+            }
+        }
 
-		[HttpGet]
-		public IActionResult Login()
-		{
-			return View();
-		}
+        [HttpGet]
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
-		[HttpPost]
-		public IActionResult Login(LoginViewModel model)
-		{
+        [HttpPost]
+        public IActionResult Contact(ContactMessageViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var newContactMessage = new ContactMessage
+                {
+                    Nickname = model.Nickname,
+                    Email = model.Email,
+                    Description = model.Description
+                };
+
+
+                newContactMessage = _contactMessageData.AddContactMessage(newContactMessage);
+
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginViewModel model)
+        {
             try
             {
                 var admin = _administratorData.Login(model);
@@ -151,48 +151,55 @@ namespace MyBlog.Controllers
                 return View();
             }
         }
-		[HttpGet]
-		public IActionResult Search(string query)
-		{
-			var posts = _postData.GetAllPosts(query);
+        [HttpGet]
+        public IActionResult Search(string query)
+        {
+            var posts = _postData.GetAllPosts(query);
 
-			return View("SearchPost", posts);
-		}
-		[HttpGet]
-		public IActionResult AdminPanel()
-		{
-			return View();
-		}
-		[HttpGet]
-		public IActionResult ContactMessages()
-		{
-			var model = new ContactMessagesViewModelcs();
-			model.Message = _contactMessageData.GetAll();
-			return View(model);
-		}
-		[HttpGet]
-		public IActionResult NewAdmin()
-		{
-			return View();
-		}
-		[HttpPost]
-		public IActionResult NewAdmin(NewAdminViewModel model)
-		{
-			if (ModelState.IsValid)
-			{
-				var newAdmin = new Administrator
-				{
-					Login = model.Login,
-					Password = model.Password,
-				};
-				newAdmin = _administratorData.Add(newAdmin);
+            return View("SearchPost", posts);
+        }
+        [HttpGet]
+        public IActionResult AdminPanel()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult ContactMessages()
+        {
+            var model = new ContactMessagesViewModelcs();
+            model.Message = _contactMessageData.GetAll();
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult NewAdmin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult NewAdmin(NewAdminViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var newAdmin = new Administrator
+                {
+                    Login = model.Login,
+                    Password = model.Password,
+                };
+                newAdmin = _administratorData.Add(newAdmin);
 
-				return RedirectToAction(nameof(Index));
-			}
-			else
-			{
-				return View();
-			}
-		}
-	}
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            _postData.Delete(id);
+           return RedirectToAction("Index", "Home");
+        }
+
+    }   
 }
