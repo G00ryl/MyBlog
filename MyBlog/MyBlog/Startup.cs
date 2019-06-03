@@ -66,7 +66,7 @@ namespace MyBlog
 
 			app.UseStaticFiles();
             app.UseSession();
-
+            app.UseHttpsRedirection();
 			app.UseMvc(configureRoutes);
 			
 			
