@@ -1,0 +1,15 @@
+﻿
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 10px;
+    background-color: Bisque;
+    border-width: 2px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+}

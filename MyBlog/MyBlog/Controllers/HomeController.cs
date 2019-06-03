@@ -200,6 +200,11 @@ namespace MyBlog.Controllers
             _postData.Delete(id);
            return RedirectToAction("Index", "Home");
         }
+        [HttpGet]
+        public IActionResult Game()
+        {
+            return View();
+        }
 
     }   
 }
