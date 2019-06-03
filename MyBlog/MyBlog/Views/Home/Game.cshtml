@@ -1,28 +1,22 @@
-﻿
-<head>
-    <title>Snake Game</title>
-    <link rel="stylesheet" href="~/css/game.css" />
-    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
-</head>
-<script src="~/snake.js"></script>
-<canvas id="snake" width="608" height="608"></canvas>
-<div class="card">
-    <h3>Directions:</h3>
-    <ul>
-        <li>Gora   &#8593;
-        <li>Lewo   &#8592;
-        <li>Prawo   &#8594;
-        <li>Dol  &#8595;
-    </ul>
-    <h3>New Game- Press F5</h3>
-    <h3> Awards:</h3>
-    <p> For apple u can get 1 point</p>
-    <p> For peach u can get 2 points</p>
-</div>
+﻿@{
+    Layout = "_Layout1";
+}
+    <canvas id="snake" width="608" height="608">
 
+    </canvas>
+    <script src="~/Javascrips/snake.js"></script>
+        <div class="card">
+            <h3>Directions:</h3>
+            <ul>
+                <li>Gora   &#8593;
+                <li>Lewo   &#8592;
+                <li>Prawo   &#8594;
+                <li>Dol  &#8595;
+            </ul>
+            <h3>New Game- Press F5</h3>
+            <h3> Awards:</h3>
+            <p> For apple u can get 1 point</p>
+            <p> For peach u can get 2 points</p>
+        </div>
+ 
 
-@section footer{
-    <div class="footer">
-        <p>&copy; Website made by Dawid Gorla 2018."
-    </div>
-    }

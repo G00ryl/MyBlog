@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Javascrips/img/food.png" />
+    <link href="~/Javascrips/img/food2.png" />
+    <link href="~/Javascrips/img/ground.png" />
+    <link href="~/Javascrips/img/audio/dead.mp3" />
+    <link href="~/Javascrips/img/audio/down.mp3" />
+    <link href="~/Javascrips/img/audio/eat.mp3" />
+    <link href="~/Javascrips/img/audio/left.mp3" />
+    <link href="~/Javascrips/img/audio/right.mp3" />
+    <link href="~/Javascrips/img/audio/up.mp3" />
+    <script src="~/Javascrips/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="~/Javascrips/snake.js"></script>
+    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
+<style>
+    body {
+        background-color: lightblue;
+    }
+
+    canvas {
+        
+        display: block;
+        margin: 0 auto;
+    }
+
+    .card {
+        padding: 10px;
+        background-color: Bisque;
+        border-width: 2px;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
